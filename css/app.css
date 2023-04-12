@@ -33,6 +33,8 @@ h1 > span, h4 {
   overflow: hidden;
   transition: all 300ms ease-in-out;
   -webkit-tap-highlight-color: transparent;
+  justify-self: center; 
+  margin-top: 1.2em;
 }
 #get-started-btn:focus {
   outline: 0;
