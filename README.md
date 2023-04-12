@@ -1,6 +1,6 @@
 # Musical Hoverboard App with PURE JavaScript
 
-Live Version: a href="https://ozandeste.github.io/hoverboard-musical/" target="_blank" rel="noopener" title="Musical Hoverboard">Link</a>
+Live Version: <a href="https://ozandeste.github.io/hoverboard-musical/" target="_blank" rel="noopener" title="Musical Hoverboard">Link</a>
 
 I developed a musical hoverboard and when you click on a tile, it will give you a music note!
 I used JavaScript to create tiles automatically and to add events to everything.
