@@ -12,7 +12,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
-* {box-sizing: border-box; margin: 0; user-select: none;}
+* {
+  box-sizing: border-box; 
+  margin: 0; 
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
 
 html {color: rgba(255, 255, 255, 0.87) !important;}
 
