@@ -1,16 +1,33 @@
-const App = document.getElementById('app');
-const getStartedBTN = document.getElementById('get-started-btn');
+// SOME SHORTCUT UTILS THAT I WILL USE
+$ = (id) => document.getElementById(id);
+_ = (element, event, func) => element.addEventListener(event, func);
 
-const TILE_COUNT = 1000;
-const COL_COUNT = getComputedStyle(App).getPropertyValue('--col-count');
+// Setting up the elements
+const App = $('app');
+const getStartedBTN = $('get-started-btn');
 
+// VARIABLES
+const TILE_COUNT = 1000; // change this for setting a new amount for tiles count
+const COL_COUNT = getComputedStyle(App).getPropertyValue('--col-count'); // this comes from css and it sets the column count
 const MUSIC_NOTES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
 eventListener();
-
 function eventListener() {
-  document.addEventListener('DOMContentLoaded', createHoverboard);
-  getStartedBTN.addEventListener('click', playAudio);
+  _(document, 'DOMContentLoaded', createHoverboard);
+  _(getStartedBTN, 'click', () => {
+    let interval;
+    if (!document.documentElement.classList.contains('rgb--mode')) {
+      interval = setInterval(playAudio, 300);
+      document.documentElement.classList.add('rgb--mode');
+    }
+
+    setTimeout(() => {
+      document.documentElement.classList.remove('rgb--mode');
+      clearInterval(interval);
+    }, 2000);
+
+    App.scrollIntoView({ behavior: 'smooth' });
+  });
 }
 
 function createHoverboard() {
@@ -22,13 +39,14 @@ function createHoverboard() {
     tileContainer.classList.add('tile-container');
     tile.classList.add('tile');
 
-    tile.addEventListener('mouseenter', mouseEnterHandler);
-    tile.addEventListener('mouseleave', mouseLeaveHandler);
-    tileContainer.addEventListener('click', playAudio);
+    _(tile, 'mouseenter', mouseEnterHandler);
+    _(tile, 'mouseleave', mouseLeaveHandler);
+    _(tileContainer, 'click', playAudio);
 
-    // Splash - loading animation
+    // Splash - loading tiles animation
     tilesLoadingAnimation(tile, i);
 
+    // adding elements to DOM
     tileContainer.appendChild(tile);
     App.appendChild(tileContainer);
   }
@@ -40,11 +58,11 @@ function tilesLoadingAnimation(tile, i) {
 
   setTimeout(() => {
     tile.setAttribute('style', 'background-color: rgb(95, 95, 95);');
-  }, 700 * (i / TILE_COUNT));
+  }, 700 * (i / TILE_COUNT) * 3.8);
 
   setTimeout(() => {
     tile.classList.remove('tile-loading');
-  }, 2000);
+  }, 3000);
 }
 
 function mouseEnterHandler(e) {
@@ -79,3 +97,17 @@ function getRandomColor() {
   }
   return `#${hex_code.join('')}`;
 }
+
+// COPYRIGHT BUTTON WITH REDIRECTING URL IN NEW PAGE
+const copyrightBtn = $('copyright');
+
+_(copyrightBtn, 'click', (e) => {
+  window.open('https://github.com/ozandeste', '_blank');
+});
+
+/*
+###################################
+### AUTHOR: OZAN DESTE          ###
+### PROJECT: hoverboard-musical ###
+###################################
+*/
