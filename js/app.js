@@ -1,7 +1,7 @@
 const App = document.getElementById('app');
 const getStartedBTN = document.getElementById('get-started-btn');
 
-const TILE_COUNT = 500;
+const TILE_COUNT = 1000;
 const COL_COUNT = getComputedStyle(App).getPropertyValue('--col-count');
 
 const MUSIC_NOTES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];

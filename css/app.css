@@ -1,7 +1,7 @@
 #app {
-  --col-count: 20;
+  --col-count: 40;
   display: grid;
-  min-width: 20em;
+  min-width: max(20em, 80%);
   overflow: hidden;
   grid-template-columns: repeat(var(--col-count), 1fr);
 }

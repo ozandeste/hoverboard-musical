@@ -1,0 +1,33 @@
+{
+  "name": "hoverboard-musical",
+  "version": "1.0.0",
+  "description": "A hoverboard-musical app built with HTML5 and CSS3.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "author": "echo \"This app is built with HTML5 and CSS3 by Ozan Deste\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozandeste/hoverboard-musical.git"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "html",
+    "css",
+    "pure",
+    "css",
+    "app",
+    "webapp",
+    "music",
+    "tiles",
+    "app"
+  ],
+  "author": "Ozan Deste",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozandeste/hoverboard-musical/issues"
+  },
+  "homepage": "https://github.com/ozandeste/hoverboard-musical#readme"
+}
