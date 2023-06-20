@@ -1,6 +1,6 @@
 {
   "name": "hoverboard-musical",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A hoverboard-musical app built with HTML5 and CSS3.",
   "main": "index.html",
   "scripts": {
